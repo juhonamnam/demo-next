@@ -4,7 +4,7 @@ export interface ICommonResponse<T> {
   message?: string
 }
 
-export interface ITodo {
-  id?: number
-  content?: string
+export interface ITodoItem {
+  id: number
+  content: string
 }
