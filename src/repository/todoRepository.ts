@@ -22,7 +22,7 @@ class TodoRepository {
   async retrieve(): Promise<ICommonResponse<ITodoItem[]>> {
     try {
       const response = await this.request({
-        endpoint: '/retrieveTodo',
+        endpoint: '/retrieveTodoList',
         method: 'GET',
       })
       return response.json()
@@ -34,7 +34,7 @@ class TodoRepository {
   async createTodo(content: string): Promise<ICommonResponse<ITodoItem>> {
     try {
       const response = await this.request({
-        endpoint: '/createTodo',
+        endpoint: '/createTodoItem',
         method: 'POST',
         body: JSON.stringify({ content: content }),
         headers: { 'Content-Type': 'application/json' },
@@ -48,7 +48,7 @@ class TodoRepository {
   async deleteTodo(id: number): Promise<ICommonResponse<ITodoItem>> {
     try {
       const response = await this.request({
-        endpoint: `/deleteTodo/${id}`,
+        endpoint: `/deleteTodoItem/${id}`,
         method: 'DELETE',
       })
       return response.json()
