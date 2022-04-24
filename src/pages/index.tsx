@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           <a href="todoList" className={styles.card}>
-            <h2>데이터 패칭 &rarr;</h2>
+            <h2>Data Fetching &rarr;</h2>
             <p>
               필요한 데이터를 전달받기 위한 방법들을 Todo List 예제를 통해
               확인하세요.
@@ -24,8 +24,8 @@ const Home: NextPage = () => {
           </a>
 
           <a href="image" className={styles.card}>
-            <h2>이미지 최적화 &rarr;</h2>
-            <p>Next.js 에서 지원하는 이미지 랜더링 방식입니다.</p>
+            <h2>Image Optimization &rarr;</h2>
+            <p>Next.js 에서 지원하는 이미지 최적화 방식입니다.</p>
           </a>
         </div>
       </main>
