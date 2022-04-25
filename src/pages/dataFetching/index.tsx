@@ -3,15 +3,18 @@ import Link from 'next/link'
 const TodoList = () => {
   return (
     <div className="container">
-      <h1>Todo List 목록 조회하기</h1>
+      <h1>Data Fetching</h1>
       <p>
-        전달받은 데이터를 렌더링하는 방법으로 Client Side, Server Side, Static
-        Generation, Incremental Static Regeneration 이 있습니다.
+        전달받은 데이터를 렌더링하는 방법으로 Client Side Rendering, Server Side
+        Rendering, Static Site Generation, Incremental Static Regeneration 이
+        있습니다.
+        <br />
+        아래 To-Do List 예제를 통해 네가지 렌더링 방법을 확인하세요.
       </p>
       <ul>
         <li>
-          <Link href={'todoList/CSR'}>
-            Client Side Rendering (CSR) 으로 조회하기
+          <Link href={'dataFetching/CSR'}>
+            Client Side Rendering (CSR) 으로 To-Do List 조회하기
           </Link>
           <p>
             페이지 요청시 클라이언트에게 미완성된 HTML을 전달하고 필요한
@@ -19,8 +22,8 @@ const TodoList = () => {
           </p>
         </li>
         <li>
-          <Link href={'todoList/SSR'}>
-            Server Side Rendering (SSR) 으로 조회하기
+          <Link href={'dataFetching/SSR'}>
+            Server Side Rendering (SSR) 으로 To-Do List 조회하기
           </Link>
           <p>
             페이지 요청시 필요한 데이터를 서버에서 요청하여 완성된 HTML을
@@ -28,8 +31,8 @@ const TodoList = () => {
           </p>
         </li>
         <li>
-          <Link href={'todoList/SSG'}>
-            Static Site Generation (SSG) 으로 조회하기
+          <Link href={'dataFetching/SSG'}>
+            Static Site Generation (SSG) 으로 To-Do List 조회하기
           </Link>
           <p>
             빌드시 필요한 데이터를 요청하여 HTML을 완성시키고 페이지 요청시 미리
@@ -37,8 +40,8 @@ const TodoList = () => {
           </p>
         </li>
         <li>
-          <Link href={'todoList/ISR'}>
-            Incremental Static Regeneration (ISR) 으로 조회하기
+          <Link href={'dataFetching/ISR'}>
+            Incremental Static Regeneration (ISR) 으로 To-Do List 조회하기
           </Link>
           <p>
             SSG 방식으로 빌드를 하되 일정 주기마다 데이터를 최신화하여 변경
