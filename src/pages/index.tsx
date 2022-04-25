@@ -17,11 +17,12 @@ const Home: NextPage = () => {
               <br />
               <br />
               <span className="text-danger">
-                현재 개발환경으로 실행중입니다. Next.js 에서 지원하는 렌더링 최적화 효과를 체험하려면 개발환경이
-                아닌 배포환경으로 실행하세요.
+                현재 개발환경으로 실행중입니다. Next.js 에서 지원하는 렌더링
+                최적화 효과를 체험하려면 개발환경이 아닌 배포환경으로
+                실행하세요.
                 <br />
                 배포환경으로 실행하기 위해서는 <code>npm run build</code> 로
-                빌드한 후 <code>npm run start</code> 로 실행하세요
+                빌드한 후 <code>npm run start</code> 로 실행하세요.
               </span>
             </>
           )}
@@ -32,13 +33,23 @@ const Home: NextPage = () => {
             <h2>Data Fetching &rarr;</h2>
             <p>
               필요한 데이터를 전달받기 위한 방법들을 Todo List 예제를 통해
-              확인하세요.
+              확인해봐요.
             </p>
+          </a>
+
+          <a href="dynamicRoutes" className={styles.card}>
+            <h2>Dynamic Routes &rarr;</h2>
+            <p>Path variable 렌더링을 최적화하기 위한 방법들을 확인해봐요.</p>
           </a>
 
           <a href="imageOptimization" className={styles.card}>
             <h2>Image Optimization &rarr;</h2>
             <p>Next.js 에서 지원하는 이미지 최적화 방식입니다.</p>
+          </a>
+
+          <a href="https://nextjs.org" className={styles.card}>
+            <h2>Documentation &rarr;</h2>
+            <p>공식문서를 통해 다른 여러 기능을 확인하실 수 있습니다.</p>
           </a>
         </div>
       </main>
