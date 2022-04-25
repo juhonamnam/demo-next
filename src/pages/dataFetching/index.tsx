@@ -44,8 +44,8 @@ const TodoList = () => {
             Incremental Static Regeneration (ISR) 으로 To-Do List 조회하기
           </Link>
           <p>
-            SSG 방식으로 빌드를 하되 일정 주기마다 데이터를 최신화하여 변경
-            여부를 파악하고 새롭게 빌드합니다.
+            SSG 방식으로 빌드를 하되 일정 주기를 가지게 되고, 그 주기가 끝난
+            이후에 요청이 들어올 경우 데이터를 최신화하여 새롭게 빌드합니다.
           </p>
         </li>
       </ul>
