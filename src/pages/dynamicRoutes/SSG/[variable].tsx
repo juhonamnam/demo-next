@@ -21,8 +21,7 @@ export const getStaticPaths = async () => {
       { params: { variable: 'variable2' } },
       { params: { variable: 'variable3' } },
     ],
-    // fallback: true일 경우 정해진 path variable 외에는 Client Side Rendering으로 처리합니다.
-    // fallback: false일 경우 없는 페이지로 처리합니다.
+    // fallback: false일 경우 정해진 path variable 외에는 Not Found로 처리합니다.
     fallback: true,
   }
 }

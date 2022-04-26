@@ -25,8 +25,8 @@ const DynamicRoutesHome = ({ todoList }: { todoList: ITodoItem[] }) => {
           <TodoItemId todoList={todoList} endpoint="dynamicRoutesAdv/SSR" />
           <p>
             페이지 요청시 서버에서 path variable을 통해 조회 후 렌더링하여
-            완성된 HTML을 클라이언트에게 전달합니다. 결과가 없는 경우 없는
-            페이지로 처리합니다.
+            완성된 HTML을 클라이언트에게 전달합니다. 결과가 없는 경우 Not
+            Found로 처리합니다.
           </p>
         </li>
         <li>
