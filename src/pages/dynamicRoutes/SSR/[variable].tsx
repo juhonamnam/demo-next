@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
 const SSR = () => {
-  // context.params.[변수명]을 통해 path variable을 가져옵니다.
+  // useRouter hook을 이용해 path variable을 가져옵니다.
   const router = useRouter()
   const { variable } = router.query
   return <>Path Variable: {variable}</>

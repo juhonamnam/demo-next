@@ -22,7 +22,7 @@ export const getStaticProps = async (context: any) => {
     props: {
       todoItem: response.data,
     },
-    // 한번 빌드된 HTML이 30초간 유지됩니다.
+    // 한번 빌드된 HTML은 30초의 주기를 갖습니다.
     revalidate: 30,
   }
 }
@@ -31,12 +31,13 @@ export const getStaticPaths = async () => {
   const response = await todoRepository.retrieve()
 
   return {
-    // 이곳에 선언된 path variable 외에는 빌드하지 않습니다.
-    paths: response.data?.map((todoItem) => {
-      return { params: { id: todoItem.id.toString() } }
-    }),
-    // fallback: false일 경우 정해진 path variable 외에는 Not Found로 처리합니다.
-    fallback: true,
+    // 이곳에 선언된 path variable은 최초로 빌드될때 생성되는 페이지입니다.
+    // 선언된 path variable 외에도 요청이 들어오면 새로 빌드해주는 방식에서 초기 빌드는 필수가 아닙니다.
+    paths: [],
+    // fallback: true 또는 'blocking'인 경우 위에서 선언한 path variable 외로 요청이 들어오면
+    // 그 페이지를 새롭게 빌드합니다. ('blocking'은 true의 문제점을 보완해서 나온 기능입니다.)
+    // fallback: false일 경우 위에서 선언한 path variable 외에는 Not Found로 처리합니다.
+    fallback: 'blocking',
   }
 }
 

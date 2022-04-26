@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
     props: {
       todoList: response.data,
     },
-    // 한번 빌드된 HTML이 30초간 유지됩니다.
+    // 한번 빌드된 HTML은 30초의 주기를 갖습니다.
     revalidate: 30,
   }
 }
