@@ -31,6 +31,18 @@ class TodoRepository {
     }
   }
 
+  async retrieveItem(id: number): Promise<ICommonResponse<ITodoItem>> {
+    try {
+      const response = await this.request({
+        endpoint: `/retrieveTodoItem/${id}`,
+        method: 'GET',
+      })
+      return response.json()
+    } catch {
+      return { ok: false, message: 'Connection Error' }
+    }
+  }
+
   async createTodo(content: string): Promise<ICommonResponse<ITodoItem>> {
     try {
       const response = await this.request({

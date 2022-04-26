@@ -1,12 +1,16 @@
 import Link from 'next/link'
 
-const TodoList = () => {
+const DataFetchingHome = () => {
   return (
     <div className="container">
       <h1>Data Fetching</h1>
       <p>
-        아래 To-Do List 예제를 통해 외부 API 요청으로 받아오는 데이터를
-        렌더링하는 네가지 방법의 차이를 확인해봐요.
+        Next.js의 컴포넌트에서 정적인 요소들은 모두 HTML 형태로 컴파일합니다.
+        그러나 외부의 데이터를 가저오는 등의 동적인 요소들의 경우 미리 렌더링을
+        하기에는 제한이 있기에 이를 처리하는 방법이 필요합니다.
+        <br />
+        아래 예제는 외부 API 요청으로 데이터를 받아와서 To-Do List 목록조회하는
+        상황을 가정합니다.
       </p>
       <ul>
         <li>
@@ -14,7 +18,7 @@ const TodoList = () => {
             Client Side Rendering (CSR) 으로 To-Do List 조회하기
           </Link>
           <p>
-            페이지 요청시 프론트 서버는 클라이언트에게 미완성된 HTML을 전달하고
+            페이지 요청시 서버는 클라이언트에게 미완성된 HTML을 전달하고
             필요한 데이터는 클라이언트가 직접 요청 후 받아와서 렌더링합니다.
           </p>
         </li>
@@ -23,7 +27,7 @@ const TodoList = () => {
             Server Side Rendering (SSR) 으로 To-Do List 조회하기
           </Link>
           <p>
-            페이지 요청시 필요한 데이터를 프론트 서버가 요청 후 받아와서
+            페이지 요청시 필요한 데이터를 서버가 요청 후 받아와서
             렌더링하고 완성된 HTML을 클라이언트에게 전달합니다.
           </p>
         </li>
@@ -32,7 +36,7 @@ const TodoList = () => {
             Static Site Generation (SSG) 으로 To-Do List 조회하기
           </Link>
           <p>
-            프론트 서버 빌드시 필요한 데이터를 요청 후 받아와서 렌더링을 하고,
+            서버 빌드시 필요한 데이터를 요청 후 받아와서 렌더링을 하고,
             이후 클라이언트에서 페이지 요청시 미리 완성되어있는 HTML을
             클라이언트에게 넘겨줍니다.
           </p>
@@ -52,4 +56,4 @@ const TodoList = () => {
   )
 }
 
-export default TodoList
+export default DataFetchingHome

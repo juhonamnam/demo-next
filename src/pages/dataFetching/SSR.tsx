@@ -26,6 +26,7 @@ export const getServerSideProps = async () => {
   const response = await todoRepository.retrieve()
 
   return {
+    // 리턴된 props 속성이 위 컴포넌트 props로 맵핑됩니다.
     props: {
       todoList: response.data,
     },

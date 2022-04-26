@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           <a href="dataFetching" className={styles.card}>
             <h2>Data Fetching &rarr;</h2>
             <p>
-              필요한 데이터를 전달받기 위한 방법들을 Todo List 예제를 통해
+              필요한 데이터를 전달받기 위한 방법들을 To-Do List 예제를 통해
               확인해봐요.
             </p>
           </a>
@@ -40,6 +40,14 @@ const Home: NextPage = () => {
           <a href="dynamicRoutes" className={styles.card}>
             <h2>Dynamic Routes &rarr;</h2>
             <p>Path variable 렌더링을 최적화하기 위한 방법들을 확인해봐요.</p>
+          </a>
+
+          <a href="dynamicRoutesAdv" className={styles.card}>
+            <h2>Dynamic Routes (Advanced) &rarr;</h2>
+            <p>
+              Path variable에 외부 API까지 사용하는 상황을 To-Do 리스트 예제로
+              확인해봐요.
+            </p>
           </a>
 
           <a href="imageOptimization" className={styles.card}>
