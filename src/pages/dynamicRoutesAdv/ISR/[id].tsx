@@ -1,7 +1,7 @@
 import { ITodoItem } from 'src/interfaces'
 import { todoRepository } from 'src/repository/todoRepository'
 
-const SSG = ({ todoItem }: { todoItem: ITodoItem }) => {
+const ISR = ({ todoItem }: { todoItem: ITodoItem }) => {
   return <>{todoItem?.content}</>
 }
 
@@ -14,7 +14,12 @@ export const getStaticProps = async (context: any) => {
     return { notFound: true }
   }
 
-  return { props: { todoItem: response.data } }
+  return {
+    props: {
+      todoItem: response.data,
+    },
+    revalidate: 30,
+  }
 }
 
 export const getStaticPaths = async () => {
@@ -27,8 +32,8 @@ export const getStaticPaths = async () => {
     }),
     // fallback: true일 경우 정해진 path variable 외에는 Client Side Rendering으로 처리합니다.
     // fallback: false일 경우 없는 페이지로 처리합니다.
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
-export default SSG
+export default ISR

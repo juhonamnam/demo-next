@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
   return { props: {} }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   return {
     paths: [
       // 이곳에 선언된 path variable 외에는 빌드하지 않습니다.

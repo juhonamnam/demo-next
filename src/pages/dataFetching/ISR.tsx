@@ -6,7 +6,7 @@ import { todoRepository } from 'src/repository/todoRepository'
 const ISR = ({ todoList }: { todoList: ITodoItem[] }) => {
   return (
     <div className="container card bg-light mt-3">
-      <h1>Todo List</h1>
+      <h1>To-Do List</h1>
       ** 이 안에 요청 응답 내용이 들어갑니다 **
       {/* Todo List 목록 */}
       <ul className="list-group">
@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
     props: {
       todoList: response.data,
     },
-    // 30초마다 새롭게 빌드
+    // 한번 빌드된 HTML이 30초간 유지됩니다.
     revalidate: 30,
   }
 }
