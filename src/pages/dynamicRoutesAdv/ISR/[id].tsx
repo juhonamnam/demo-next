@@ -28,8 +28,6 @@ export const getStaticProps = async (context: any) => {
 }
 
 export const getStaticPaths = async () => {
-  const response = await todoRepository.retrieve()
-
   return {
     // 이곳에 선언된 path variable은 최초로 빌드될때 생성되는 페이지입니다.
     // 선언된 path variable 외에도 요청이 들어오면 새로 빌드해주는 방식에서 초기 빌드는 필수가 아닙니다.
