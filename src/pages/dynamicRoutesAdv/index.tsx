@@ -45,7 +45,7 @@ const DynamicRoutesHome = ({ todoList }: { todoList: ITodoItem[] }) => {
           <TodoItemId todoList={todoList} endpoint="dynamicRoutesAdv/ISR" />
           <p>
             SSG 방식으로 미리 빌드를 하되 일정 주기를 두어 주가기 끝난 이후에
-            들어오는 페이지 요청에 대해서 새롭게 빌드합니다.
+            들어오는 페이지 요청에 대해서 새롭게 캐싱합니다.
           </p>
         </li>
       </ul>
