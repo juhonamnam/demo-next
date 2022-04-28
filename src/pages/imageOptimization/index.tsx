@@ -33,8 +33,23 @@ const ImageDemo = () => {
               {'<'}Image{'>'}
             </code>
             <br />
-            {/* <Image>는 width와 height가 필수값입니다. */}
+            {/* <Image>는 layout='fill'이 아닌 이상 width와 height가 필수값입니다. */}
             <Image src="/test_image1.jpg" width={480} height={270} alt="" />
+          </li>
+          최적화를 사용하지 않으려면 unoptimized 속성을 추가하세요.
+          <li>
+            <code>
+              {'<'}Image unoptimized {'>'}
+            </code>
+            <br />
+            {/* <Image>는 layout='fill'이 아닌 이상 width와 height가 필수값입니다. */}
+            <Image
+              src="/test_image1.jpg"
+              width={480}
+              height={270}
+              alt=""
+              unoptimized
+            />
           </li>
         </ul>
       </div>
