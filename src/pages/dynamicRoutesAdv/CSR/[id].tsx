@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { TodoItemContent } from 'src/component/TodoItemContent'
 import { ITodoItem } from 'src/interfaces'
 import { todoRepository } from 'src/repository/todoRepository'
 
@@ -22,7 +23,11 @@ const CSR = () => {
     })
   }, [id, router])
 
-  return <>{todoItem?.content}</>
+  return (
+    <div className="container card bg-light mt-3">
+      <TodoItemContent todoItem={todoItem} />
+    </div>
+  )
 }
 
 export default CSR

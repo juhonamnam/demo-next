@@ -1,8 +1,13 @@
+import { TodoItemContent } from 'src/component/TodoItemContent'
 import { ITodoItem } from 'src/interfaces'
 import { todoRepository } from 'src/repository/todoRepository'
 
 const SSG = ({ todoItem }: { todoItem: ITodoItem }) => {
-  return <>{todoItem?.content}</>
+  return (
+    <div className="container card bg-light mt-3">
+      <TodoItemContent todoItem={todoItem} />
+    </div>
+  )
 }
 
 export const getStaticProps = async (context: any) => {
