@@ -24,7 +24,7 @@ const CSR = () => {
   }, [id, router])
 
   return (
-    <div className="container card bg-light mt-3">
+    <div className="container">
       <TodoItemContent todoItem={todoItem} />
     </div>
   )

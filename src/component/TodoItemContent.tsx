@@ -2,7 +2,7 @@ import { ITodoItem } from 'src/interfaces'
 
 export const TodoItemContent = ({ todoItem }: { todoItem?: ITodoItem }) => {
   return (
-    <table className="table" style={{ maxWidth: 300 }}>
+    <table className="table">
       <colgroup>
         <col />
         <col />

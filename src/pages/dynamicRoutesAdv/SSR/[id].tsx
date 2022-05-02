@@ -4,7 +4,7 @@ import { todoRepository } from 'src/repository/todoRepository'
 
 const SSR = ({ todoItem }: { todoItem: ITodoItem }) => {
   return (
-    <div className="container card bg-light mt-3">
+    <div className="container">
       <TodoItemContent todoItem={todoItem} />
     </div>
   )
