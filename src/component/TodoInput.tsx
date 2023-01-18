@@ -12,8 +12,6 @@ export const TodoInput = () => {
       if (response.ok) {
         alert('Todo 아이템이 추가되었습니다.')
         window.location.reload()
-      } else {
-        alert(response.message)
       }
     })
   }

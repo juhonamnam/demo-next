@@ -13,8 +13,6 @@ export const TodoItem = ({ todoItem }: { todoItem: ITodoItem }) => {
             if (response.ok) {
               alert('삭제되었습니다.')
               window.location.reload()
-            } else {
-              alert(response.message)
             }
           })
         }}
