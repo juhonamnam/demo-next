@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { todoRepository } from 'src/repository/todoRepository'
+import { restClient } from 'src/restClient'
 
 export const TodoInput = () => {
   const ref = useRef<HTMLInputElement>(null)
@@ -8,7 +8,7 @@ export const TodoInput = () => {
       alert('할 일을 입력하세요')
       return
     }
-    todoRepository.createTodo(ref.current.value).then((response) => {
+    restClient.createTodo(ref.current.value).then((response) => {
       if (response.ok) {
         alert('Todo 아이템이 추가되었습니다.')
         window.location.reload()

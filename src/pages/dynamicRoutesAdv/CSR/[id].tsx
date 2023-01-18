@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { TodoItemContent } from 'src/component/TodoItemContent'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { restClient } from 'src/restClient'
 
 const CSR = () => {
   // useRouter hook을 이용해 path variable을 가져옵니다.
@@ -12,7 +12,7 @@ const CSR = () => {
   const [todoItem, setTodoItem] = useState<ITodoItem>()
   useEffect(() => {
     // 클라이언트에서 요청
-    todoRepository.retrieveItem(Number(id)).then((response) => {
+    restClient.retrieveItem(Number(id)).then((response) => {
       // 결과가 없을 경우 404 페이지
       if (!response.ok) {
         router.push('/404')

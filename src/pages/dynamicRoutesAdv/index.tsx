@@ -1,6 +1,6 @@
 import { TodoItemId } from 'src/component/TodoItemId'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { prismaClient } from 'src/prismaClient'
 
 const DynamicRoutesHome = ({ todoList }: { todoList: ITodoItem[] }) => {
   return (
@@ -54,11 +54,11 @@ const DynamicRoutesHome = ({ todoList }: { todoList: ITodoItem[] }) => {
 }
 
 export const getServerSideProps = async () => {
-  const response = await todoRepository.retrieve()
+  const response = await prismaClient.getAll()
 
   return {
     props: {
-      todoList: response.data,
+      todoList: response,
     },
   }
 }

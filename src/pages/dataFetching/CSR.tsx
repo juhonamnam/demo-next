@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import { TodoInput } from 'src/component/TodoInput'
 import { TodoItem } from 'src/component/TodoItem'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { restClient } from 'src/restClient'
 
 const CSR = () => {
   const [todoList, setTodoList] = useState<ITodoItem[]>()
 
   useEffect(() => {
     // 클라이언트에서 요청
-    todoRepository.retrieve().then((response) => {
+    restClient.retrieve().then((response) => {
       setTodoList(response.data)
     })
   }, [])

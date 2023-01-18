@@ -1,6 +1,6 @@
 import { TodoItemContent } from 'src/component/TodoItemContent'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { prismaClient } from 'src/prismaClient'
 
 const ISR = ({ todoItem }: { todoItem: ITodoItem }) => {
   return (
@@ -12,10 +12,10 @@ const ISR = ({ todoItem }: { todoItem: ITodoItem }) => {
 
 export const getStaticProps = async (context: any) => {
   // context.params.[변수명]을 통해 path variable을 가져옵니다.
-  const response = await todoRepository.retrieveItem(Number(context.params.id))
+  const response = await prismaClient.get(Number(context.params.id))
 
   // 조건에 따라 Not Found로 처리할 수 있습니다.
-  if (!response.ok) {
+  if (!response) {
     return {
       notFound: true,
       // Not Found로 처리된 상태가 30초간 유지됩니다.
@@ -25,7 +25,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      todoItem: response.data,
+      todoItem: response,
     },
     // 캐싱된 HTML은 30초의 주기를 갖습니다.
     revalidate: 30,

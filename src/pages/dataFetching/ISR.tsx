@@ -1,7 +1,7 @@
 import { TodoInput } from 'src/component/TodoInput'
 import { TodoItem } from 'src/component/TodoItem'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { prismaClient } from 'src/prismaClient'
 
 const ISR = ({ todoList }: { todoList: ITodoItem[] }) => {
   return (
@@ -23,12 +23,12 @@ const ISR = ({ todoList }: { todoList: ITodoItem[] }) => {
 
 export const getStaticProps = async () => {
   // 빌드시 요청
-  const response = await todoRepository.retrieve()
+  const response = await prismaClient.getAll()
 
   return {
     // 리턴된 props 속성이 위 컴포넌트 props로 맵핑됩니다.
     props: {
-      todoList: response.data,
+      todoList: response,
     },
     // 캐싱된 HTML은 30초의 주기를 갖습니다.
     revalidate: 30,

@@ -1,7 +1,7 @@
 import { TodoInput } from 'src/component/TodoInput'
 import { TodoItem } from 'src/component/TodoItem'
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { prismaClient } from 'src/prismaClient'
 
 const SSR = ({ todoList }: { todoList: ITodoItem[] }) => {
   return (
@@ -23,12 +23,12 @@ const SSR = ({ todoList }: { todoList: ITodoItem[] }) => {
 
 export const getServerSideProps = async () => {
   // 서버에서 요청
-  const response = await todoRepository.retrieve()
+  const response = await prismaClient.getAll()
 
   return {
     // 리턴된 props 속성이 위 컴포넌트 props로 맵핑됩니다.
     props: {
-      todoList: response.data,
+      todoList: response,
     },
   }
 }

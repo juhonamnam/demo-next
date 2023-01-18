@@ -1,5 +1,5 @@
 import { ITodoItem } from 'src/interfaces'
-import { todoRepository } from 'src/repository/todoRepository'
+import { restClient } from 'src/restClient'
 
 export const TodoItem = ({ todoItem }: { todoItem: ITodoItem }) => {
   return (
@@ -9,7 +9,7 @@ export const TodoItem = ({ todoItem }: { todoItem: ITodoItem }) => {
         type="button"
         className="btn btn-sm btn-danger img-circle"
         onClick={() => {
-          todoRepository.deleteTodo(todoItem.id).then((response) => {
+          restClient.deleteTodo(todoItem.id).then((response) => {
             if (response.ok) {
               alert('삭제되었습니다.')
               window.location.reload()
